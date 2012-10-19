@@ -1,5 +1,7 @@
 require 'pg_tools'
 class Tenant < ActiveRecord::Base
+
+  validates :subdomain, :uniqueness => true
   after_create :prepare_tenant
 
   private

@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    raise ActionController::RoutingError.new('No Website with this DOMAIN exist')
+
+    #raise ActionController::RoutingError.new('No Website with this DOMAIN exist')
   end
 
 end

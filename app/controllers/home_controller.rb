@@ -4,14 +4,18 @@ class HomeController < ApplicationController
   #before_filter :check_schema
 
   def index
-    if request.subdomain.split(".")[0] == 'www'
+    if request.subdomain.split(".")[0] == 'www' or request.subdomain.blank?
       redirect_to  :controller => 'tenants', :action => 'index'
       return false
     end
-    check_schema
-    @page = Page.all.first
-    @content = @page.content
-    redirect_to "/pages/#{@page.id}"
+    if check_schema
+      @page = Page.all.first
+      @content = @page.content
+      redirect_to "/pages/#{@page.id}"
+    else
+      render :file => "#{Rails.root}/public/404.html", :status => :not_found
+    end
+
     #unless @content
     #  reset_subdomain
     #  #redirect_to  :controller => 'pages', :action => 'new'
@@ -27,6 +31,8 @@ class HomeController < ApplicationController
       flash[:error] = "Page does not exist"
       not_found
       false
+    else
+      true
     end
 
   end

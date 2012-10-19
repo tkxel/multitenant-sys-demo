@@ -45,7 +45,7 @@ class TenantsController < ApplicationController
     respond_to do |format|
       if @tenant.save
 
-        format.html { redirect_to "#{(request.url.sub('www', @tenant.subdomain)).gsub('tenants', 'pages/new')}" }
+        format.html { redirect_to "#{(request.url.include? '//www')? (request.url.sub('www', @tenant.subdomain)).gsub('tenants', 'pages/new') : (request.url.sub('://', '://'+@tenant.subdomain+'.')).gsub('tenants', 'pages/new')}" }
         format.json { render json: @tenant, status: :created, location: @tenant }
       else
         format.html { render action: "new" }
