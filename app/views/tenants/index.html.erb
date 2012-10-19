@@ -3,6 +3,7 @@
 
 
 <div class="tenants-list" style="float: left; background: grey; font-family: Arial; color: #ffffff; font-size: 14px;">
+  <% if @tenants.length>0 %>
   <table>
     <tr>
       <th>Subdomain</th>
@@ -16,6 +17,7 @@
     </tr>
   <% end %>
   </table>
+      <% end %>
 </div>
 <div style="float: left; padding-left: 20px;">
   <a href="tenants/new" style="text-decoration: none;"><div class="create-btn" align="center">New Tenant</div></a
