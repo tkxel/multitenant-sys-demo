@@ -1,4 +1,4 @@
-<%= form_for(@tenant) do |f| %>
+<%= form_for (@tenant) , :html => { :class => "edit_post", :onsubmit => "return validate()" } do |f| %>
   <% if @tenant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tenant.errors.count, "error") %> prohibited this tenant from being saved:</h2>
@@ -13,9 +13,20 @@
 
   <div class="field">
     <%= f.label :subdomain %><br />
-    <%= f.text_field :subdomain %>
+    <%= f.text_field :subdomain %><label style="display: none; font-family: arial; color: #ff0000;" id="errormsg">* Please fill in the field with proper subdomain.</label>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<script>
+  function validate(){
+      if($('#tenant_subdomain').val()=="")
+      {
+          $("#errormsg").show();
+          return false;
+      }
+      else
+        return true
+  }
+</script>
