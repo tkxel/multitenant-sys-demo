@@ -12,7 +12,7 @@
   <% @tenants.each do |tenant| %>
     <tr>
       <td style="width: 150px; padding-left: 20px;"><%= tenant.subdomain %></td>
-      <td class="list-rows" style="width: 140px; color: whiteSmoke; border-left: 1px solid #000000; padding-left: 15px;"><%= link_to 'Show', tenant, :style=>" color: #f5f5dc;"%> |   <%= link_to 'Edit', edit_tenant_path(tenant), :style=>" color: #f5f5dc;" %> | <%= link_to 'Destroy', tenant, confirm: 'Are you sure?', method: :delete, :style=>" color: #f5f5dc;" %></td>
+      <td class="list-rows" style="width: 140px; color: whiteSmoke; border-left: 1px solid #000000; padding-left: 15px;"><%= link_to 'Edit', edit_tenant_path(tenant), :style=>" color: #f5f5dc;" %> | <%= link_to 'Destroy', tenant, confirm: 'Are you sure?', method: :delete, :style=>" color: #f5f5dc;" %></td>
     </tr>
   <% end %>
   </table>
