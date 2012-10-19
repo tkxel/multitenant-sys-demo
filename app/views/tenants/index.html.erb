@@ -1,23 +1,24 @@
-<h1>Listing tenants</h1>
+<div style="padding-left: 150px;">
+<h1>Listing Tenants</h1>
 
-<table>
-  <tr>
-    <th>Subdomain</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @tenants.each do |tenant| %>
-  <tr>
-    <td><%= tenant.subdomain %></td>
-    <td><%= link_to 'Show', tenant %></td>
-    <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
-    <td><%= link_to 'Destroy', tenant, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="tenants-list" style="float: left; background: grey; font-family: Arial; color: #ffffff; font-size: 14px;">
+  <table>
+    <tr>
+      <th>Subdomain</th>
+      <th>Action</th>
+    </tr>
 
-<br />
+  <% @tenants.each do |tenant| %>
+    <tr>
+      <td style="width: 150px; padding-left: 20px;"><%= tenant.subdomain %></td>
+      <td class="list-rows" style="width: 140px; color: whiteSmoke; border-left: 1px solid #000000; padding-left: 15px;"><%= link_to 'Show', tenant, :style=>" color: #f5f5dc;"%> |   <%= link_to 'Edit', edit_tenant_path(tenant), :style=>" color: #f5f5dc;" %> | <%= link_to 'Destroy', tenant, confirm: 'Are you sure?', method: :delete, :style=>" color: #f5f5dc;" %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<div style="float: left; padding-left: 20px;">
+  <a href="tenants/new" style="text-decoration: none;"><div class="create-btn" align="center">New Tenant</div></a
+</div>
+</div>
 
-<%= link_to 'New Tenant', new_tenant_path %>

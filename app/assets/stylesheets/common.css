@@ -1,0 +1,14 @@
+.create-btn{
+    background-image:url("bg_blueBtn.png");
+    width: 94px;
+    height: 24px;
+    line-height: 2;
+    color: #f5f5dc;
+    font-weight: bold;
+}
+.new-btn{
+    background-image:url("bg_blueBtn.png");
+    width: 98px;
+    height: 28px;
+    cursor: pointer;
+}
