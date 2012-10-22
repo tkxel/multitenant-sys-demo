@@ -1,13 +1,9 @@
 <%= form_for (@tenant) , :html => { :class => "edit_post", :onsubmit => "return validate()" } do |f| %>
   <% if @tenant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tenant.errors.count, "error") %> prohibited this tenant from being saved:</h2>
-
-      <ul>
+    <div style="font-family: arial; color: #ff0000; font-size: 12px; width: 245px;">
       <% @tenant.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <%= "* #{msg}" %>
       <% end %>
-      </ul>
     </div>
   <% end %>
 
