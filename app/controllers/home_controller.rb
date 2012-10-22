@@ -15,12 +15,6 @@ class HomeController < ApplicationController
     else
       render :file => "#{Rails.root}/public/404.html", :status => :not_found
     end
-
-    #unless @content
-    #  reset_subdomain
-    #  #redirect_to  :controller => 'pages', :action => 'new'
-    #  #return true
-    #end
   end
 
   private
