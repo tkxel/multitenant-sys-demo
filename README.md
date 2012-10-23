@@ -21,4 +21,11 @@ After installation, hit the following URL in the browser
 It would allow you to create a new tenant and its page.
 In order to check the tenant created, hit following URL.
 
-    tenant-name..lvh.me:3000
+    subdomain.lvh.me:3000
+Subdomain is the tenant that has been created using the system.
+
+## Technologies
+
+* Postgresql
+* Ruby 1.9.2
+* Rails 3.1.3
