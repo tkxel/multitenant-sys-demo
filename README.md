@@ -26,6 +26,6 @@ Subdomain is the tenant that has been created using the system.
 
 ## Technologies
 
-* Postgresql
+* PostgreSQL
 * Ruby 1.9.2
 * Rails 3.1.3
