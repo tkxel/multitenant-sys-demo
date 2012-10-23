@@ -2,7 +2,8 @@
 
 class HomeController < ApplicationController
   #before_filter :check_schema
-
+  # Landing page action for the system. This will redirect system according to given subdomain or default page.
+  # In case of incorrect subdomain, it will get you to the default 404 page.
   def index
     if request.subdomain.split(".")[0] == 'www' or request.subdomain.blank?
       redirect_to  :controller => 'tenants', :action => 'index'
@@ -18,6 +19,7 @@ class HomeController < ApplicationController
   end
 
   private
+  # The DB schema name is same as the subdomain name, this function will check if schema for such subdomain exists.
   def check_schema
     @schema = PgTools.get_search_path
 
