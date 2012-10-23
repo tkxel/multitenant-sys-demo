@@ -1,4 +1,4 @@
-multitenant-sys-demo
+Multitenant Demo
 ====================
 
 Demonstration project of a multitenant system.
