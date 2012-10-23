@@ -13,3 +13,12 @@ This is a demo showing the implementation of a multitenant system in Rails. The 
     bundle exec rake db:create
     bundle exec rake db:migrate
     rails s
+
+
+After installation, hit the following URL in the browser
+    http://www.lvh.me:3000/tenants
+
+It would allow you to create a new tenant and its page.
+In order to check the tenant created, hit following URL.
+
+    tenant-name..lvh.me:3000
