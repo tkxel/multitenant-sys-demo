@@ -1,0 +1,17 @@
+%div{:style => "padding-left: 150px;"}
+  %h1 Listing Tenants
+  .tenants-list{:style => "float: left; background: grey; font-family: Arial; color: #ffffff; font-size: 14px;"}
+    - if @tenants.length>0
+      %table
+        %tr
+          %th Subdomain
+          %th Action
+        - @tenants.each do |tenant|
+          %tr
+            %td{:style => "width: 150px; padding-left: 20px;"}= tenant.subdomain
+            %td.list-rows{:style => "width: 140px; color: whiteSmoke; border-left: 1px solid #000000; padding-left: 15px;"}
+              = link_to 'Edit', edit_tenant_path(tenant), :style=>" color: #f5f5dc;"
+              | #{link_to 'Destroy', tenant, confirm: 'Are you sure?', method: :delete, :style=>" color: #f5f5dc;"}
+  %div{:style => "float: left; padding-left: 20px;"}
+    %a{:href => "tenants/new", :style => "text-decoration: none;"}
+      .create-btn{:align => "center"} New Tenant

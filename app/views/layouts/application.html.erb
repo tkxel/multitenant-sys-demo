@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "http://code.jquery.com/jquery-1.8.2.min.js" %>
   <%= csrf_meta_tags %>
+  <%= tinymce :theme => "advanced", :language => "de", :theme_advanced_buttons1 => "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect", %>
 </head>
 <body>
 <%= render "shared/header" %>
@@ -13,3 +14,5 @@
 
 </body>
 </html>
+
+

@@ -1,0 +1,22 @@
+= form_for (@tenant) , :html => { :class => "edit_post", :onsubmit => "return validate()" } do |f|
+  - if @tenant.errors.any?
+    %div{:style => "font-family: arial; color: #ff0000; font-size: 12px; width: 245px;"}
+      - @tenant.errors.full_messages.each do |msg|
+        = "* #{msg}"
+  .field
+    = f.label :subdomain
+    %br/
+    = f.text_field :subdomain
+    %label#errormsg{:style => "display: none; font-family: arial; color: #ff0000;"} * Please fill in the field with proper subdomain.
+  .actions
+    = f.submit
+:javascript
+  function validate(){
+      if($('#tenant_subdomain').val()=="")
+      {
+          $("#errormsg").show();
+          return false;
+      }
+      else
+        return true
+  }
