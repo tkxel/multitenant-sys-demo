@@ -1,7 +1,6 @@
-#require "pg_tools"
-
 class HomeController < ApplicationController
   #before_filter :check_schema
+  before_filter :authenticate_user!
   # Landing page action for the system. This will redirect system according to given subdomain or default page.
   # In case of incorrect subdomain, it will get you to the default 404 page.
   def index

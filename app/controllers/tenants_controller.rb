@@ -1,6 +1,7 @@
 class TenantsController < ApplicationController
   # GET /tenants
   # GET /tenants.json
+  before_filter :authenticate_user!
 
   # By default, tenants index page will be shown as landing page for public users.
   # This will show a list of current tenants.

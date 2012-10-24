@@ -1,2 +1,13 @@
 %h1
   %span{:style => "font-family: Arial; font-size: 22px; font-weight: bold; color: #4169e1;"} TkXel | Multi Tenant Architecture
+
+#user-nav{:style => "float:right; padding-right:550px"}
+  %span
+    - if user_signed_in?
+      Signed In as #{current_user.email}
+      #{link_to "Sign Out", destroy_user_session_path, method: :delete}
+    - else
+      = link_to "Sign Up", new_user_registration_path
+      or #{link_to "Sign In", new_user_session_path}
+
+%div{:style => "clear:both"}
